@@ -67,7 +67,8 @@ Siyamthanda Gwamanda
 
 Add your repository link here:
 
-https://github.com/siyamthandagwamanda/portfolio-project
+https://github.com/siyamthandagwamanda
+
 
 ---
 
