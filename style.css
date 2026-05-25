@@ -1,175 +1,296 @@
 @import url('https://fonts.googleleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');  body{font-family: 'Poppins', sans-serif;}
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
 
-/*==========================================================
-1. Global Styles (HTML Tags)
-============================================================*/
+html{
+    scroll-behavior: smooth;
+}
 
 body{
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #f4f7fb;
     color: #333;
 }
 
-/*===============================================================
-2. Header & Navigation (IDs & Classes)
-=================================================================*/
+
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
 
 #main-header{
     background-color: #ffffff;
-    padding: 10px 0;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 #site-nav{
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px 
-}
-
-.logo{
-    display: inline-block;
+    flex-wrap: wrap;
 }
 
 .logo-image{
-    border-radius: 5px;
+    border-radius: 8px;
 }
+
+/* Navigation Links */
+
+.nav-links{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+/* Different button colors */
 
 .nav-home-btn{
     background-color: #007bff;
-     color: white;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 4px;
 }
 
 .nav-about-btn{
     background-color: #253b53;
-    color: white;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 4px;
 }
 
+.nav-interest-btn{
+    background-color: #28a745;
+}
 
 .nav-contact-btn{
     background-color: #ac1ae6;
-    color: white;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 4px;
+}
+
+/* Hover Effects */
+
+.nav-links a:hover{
+    transform: translateY(-3px);
+    opacity: 0.9;
 }
 
 
 
-.nav-interest-btn{
-    background-color: #007bff;
-    color: white;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 4px;
+.menu-toggle{
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
-/* #site-nav{
-     background-color: #007bff;
-    color: white;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 4px;
+
+
+section{
+    padding: 60px 20px;
 }
- */
-
-
-
-/*===============================================================================
-3. Sections (Using your IDs)
-================================================================================*/
 
 #home{
-    padding: 40px 0;
     text-align: center;
+    background: linear-gradient(to right, #007bff, #00b4d8);
+    color: white;
+    border-radius: 0 0 20px 20px;
 }
 
-#image{
-    text-align: center;
-}
-
-#about{
+#about,
+#contact{
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 #interest{
-    padding: 20px 0;
-}
-
-#video{
-    text-align: center;
-    margin: 20px 0;
-}
-
-#contact {
     background-color: #eef2f7;
-    padding: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
+#image,
+#video,
 #map{
     text-align: center;
+}
+
+
+.home-title{
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.home-text,
+.about-text{
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.1rem;
+}
+
+.image-title,
+.about-title,
+.interest-title{
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+
+
+.profile-image{
+    width: 250px;
+    max-width: 100%;
+    border-radius: 50%;
+    border: 5px solid #007bff;
+    margin-top: 20px;
+    transition: 0.3s ease;
+}
+
+.profile-image:hover{
+    transform: scale(1.05);
+}
+
+
+
+.interest-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    list-style: none;
     margin-top: 20px;
 }
 
-/*=======================================================================
-4. Text & Componenr classes
-========================================================================*/
-.home-title {
-    font-size: 2.5rem;
-    color: #111;
-}
-
-.image-title, .about-title, .interest-title{
-    color: #007bff;
-}
-
-.home-text, .about-text {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.profile-image{
-    border-radius: 50%;
-    border: 3px solid #007bff;
-}
-
-.fir-interest, .sec-interest {
-    background: #fff;
-    margin: 10px 0;
-    padding: 15px;
-    list-style-type: none;
+.fir-interest,
+.sec-interest{
+    background: white;
+    padding: 20px;
     border-left: 5px solid #007bff;
+    border-radius: 8px;
+    transition: 0.3s ease;
 }
 
-.video-play{
-    border: 2px solid #ddd;
-    border-radius: 4px;
+.fir-interest:hover,
+.sec-interest:hover{
+    transform: translateY(-5px);
 }
 
-.social-link {
+
+
+.video-play,
+iframe{
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+
+.social-link{
     list-style: none;
-    padding: 0;
+    margin-top: 20px;
 }
 
-.social-link li {
+.social-link li{
     margin: 10px 0;
 }
 
-.footer-text {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #777;
-    padding: 20px 0;
+.social-link a{
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    transition: 0.3s ease;
 }
+
+.social-link a:hover{
+    color: #ac1ae6;
+}
+
+
+.footer-text{
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+
+/* Tablets */
+
+@media (max-width: 768px){
+
+    .home-title{
+        font-size: 2.2rem;
+    }
+
+    .interest-list{
+        grid-template-columns: 1fr;
+    }
+
+    #site-nav{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px){
+
+    body{
+        padding: 0;
+    }
+
+    .home-title{
+        font-size: 1.8rem;
+    }
+
+    .home-text,
+    .about-text{
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .nav-links{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-links.active{
+        display: flex;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+
+    .nav-links a{
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile-image{
+        width: 180px;
+    }
+}
+
+
